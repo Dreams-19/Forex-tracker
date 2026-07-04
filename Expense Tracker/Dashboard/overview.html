@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overview</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<body>
+  <img src="overview.png" alt="Logo" img/>
+  <!-- Hamburger Icon -->
+  <div id="menuToggle" onclick="toggleSidebar()">☰</div>
+
+  <!-- Sidebar Menu -->
+  <div id="sidebarMenu" class="sidebar">
+    <h2>Dashboard</h2>
+    <ul>
+      <li onclick="goToOverview()">🏠 Overview</li>
+      <li onclick="goToAllExpenses()">📄 Transactions</li>
+      <li onclick="showExpenseForm()">➕ Add Expense</li>
+      <li onclick="logoutUser()">🔓 Logout</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <h1>Welcome back, <span id="userName">Max</span>!</h1>
+    <div class="overview-cards">
+      <div class="card"><h3>Total Expenses</h3><p id="totalExpenses">₵0</p></div>
+      <div class="card"><h3>Most Used Category</h3><p id="topCategory">—</p></div>
+      <div class="card"><h3>Latest Expense</h3><p id="latestExpense">—</p></div>
+    </div>
+    <div id="chartContainer"></div>
+  </div>
+  
+
+  <!-- Link JS at the very end -->
+  <script src="script.js"></script>
+  <!-- Expense Section (hidden until triggered) -->
+<div id="expenseSection" class="mb-4" style="display: none;">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4>Add Expense</h4>
+    <button class="btn btn-info" onclick="goToAllExpenses()">View All Expenses</button>
+  </div>
+
+  <input type="text" id="title" class="form-control mb-2" placeholder="Title" />
+  <input type="number" id="amount" class="form-control mb-2" placeholder="Amount" />
+  <select id="category" class="form-select mb-2">
+    <option value="Groceries">Groceries</option>
+    <option value="Transport">Transport</option>
+    <option value="Utilities">Utilities</option>
+    <option value="Entertainment">Entertainment</option>
+    <option value="Housing">Housing</option>
+    <option value="Healthcare">Healthcare</option>
+    <option value="Insurance">Insurance</option>
+    <option value="Debt payments">Debt payments</option>
+    <option value="Savings">Savings</option>
+    <option value="Personal spending">Personal spending</option>
+    <option value="Other">Other</option>
+  </select>
+  <input type="date" id="date" class="form-control mb-2" />
+
+  <select id="currency" class="form-select mb-2">
+    <option value="USD">USD ($)</option>
+    <option value="EUR">EUR (€)</option>
+    <option value="GBP">GBP (£)</option>
+    <option value="GHS">GHS (₵)</option>
+    <option value="JPY">JPY (¥)</option>
+    <option value="INR">INR (₹)</option>
+    <option value="AUD">AUD (A$)</option>
+    <option value="CAD">CAD (C$)</option>
+    <option value="CHF">CHF (Fr.)</option>
+    <option value="CNY">CNY (¥)</option>
+    <option value="SEK">SEK (kr)</option>
+    <option value="NZD">NZD (NZ$)</option>
+    <option value="MXN">MXN (Mex$)</option>
+    <option value="SGD">SGD (S$)</option>
+    <option value="HKD">HKD (HK$)</option>
+    <option value="Other">other</option>
+    
+  </select>
+
+  <button class="btn btn-warning w-100" onclick="addExpense()">Add Expense</button>
+  <button class="btn btn-danger w-100 mt-2" onclick="logoutUser()">Logout</button>
+</div>
+
+<!-- Latest Expense (only shows the most recent one) -->
+<div id="latestExpense" class="mt-4"></div>
+</body>
+</html>

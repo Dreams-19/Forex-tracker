@@ -1,0 +1,104 @@
+/* Full-page background image */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-image: url('login.jpg'); /* corrected filename */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Page title */
+h1 {
+  font-size: 48px; /* try 56px or 64px for larger screens */
+  color: #FFF;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 40px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Login box */
+#loginSection {
+  background-color: rgba(255, 249, 69, 0.9);
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 60px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Register section styling */
+#registerSection {
+  background-color: rgba(230, 78, 124, 0.677);
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Expense section layout */
+#expenseSection {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Expense cards */
+.card {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+/* Input fields */
+input, select {
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  transition: border-color 0.2s ease;
+}
+
+input:focus, select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Buttons */
+button {
+  margin-bottom: 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  #loginSection, #registerSection, #expenseSection {
+    margin: 20px auto;
+    max-width: 90%;
+  }
+}
